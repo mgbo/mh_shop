@@ -10,7 +10,7 @@
 
   	<!-- product detail page -->
 	<div class="container">
-		<div class="row">
+		<div class="row detail-row">
 
 			<div class="col-md-6">
 				<div id="carouselExampleControls_1" class="carousel slide" data-ride="carousel">
@@ -54,8 +54,13 @@
 				<label>Quantity:</label>
 				<input type="text" value="1">
 				<button type="button" class="btn btn-default detail-cart">Add to cart</button>
+			</div>
+
+			<div class="center">
+				<h1>characteristics</h1>
 				{{ product.description|linebreaks }}
 			</div>
+			
 		</div>
 	</div>
 
