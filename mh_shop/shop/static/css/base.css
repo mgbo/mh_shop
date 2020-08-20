@@ -329,3 +329,115 @@ form div.field {
     color:#666;
     border-radius:4px;
 }
+
+
+/*======================= MY STYLE OF CSS ============================*/
+
+/*product css*/
+
+/*body{
+    background: #4ecadc;
+}
+*/
+
+/*.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}*/
+
+/*=============== PRODUCT GRID =======================*/
+.product-grid{
+    background: #fff;
+    padding: 20px;
+    perspective: 1000px;
+    box-shadow: 0px -6px 10px rgba(0, 0, 0, 0.09), 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.image{
+    width: 200px;
+    transition: transform 1s;
+    /*transform-style: preserve-3d;*/
+}
+
+.product-grid h1{
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.product-grid h2{
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn.buy{
+    color: #4ecadc;
+    border-radius: 0;
+    border: 1px solid #4ecadc;
+    width: 100%;
+    margin-top: 20px;
+    transition: 1s ease;
+}
+
+.btn.buy:hover{
+    background: #4ecadc;
+    border-radius: 20px;
+    color: #ffff;
+}
+
+
+.product-grid:hover{
+    box-shadow: 0px 12px 5pxr rgba(0 0 0 0.1) rgba(0 0 0 0.15);
+}
+
+.image-container{
+    position: relative;
+}
+
+.image-container:hover .image{
+    transform: rotateY(180deg);
+}
+
+/*================================= DETAIL PRODUCT ======================================*/
+.newarrival{
+    background: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col-md-7 h2
+{
+    color: #555;
+}
+
+/*.stars{
+    height: 15px;
+}*/
+
+
+.price{
+    color: #FE980F;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+
+input{
+    border: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+}
+
+.cart{
+    background: #FE908F;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-left: 20px;
+}
