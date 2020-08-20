@@ -19,29 +19,113 @@
 
   <!-- MY CSS and Title -->
   <link href="{% static 'css/base.css' %}" rel="stylesheet">
-
   <title>{% block title %}My shop{% endblock %}</title>
 </head>
 
+
 <body>
   <!-- Post body and Our side bar -->
-  <main role="main" class="container" style="min-height: 100%;">
+  <main role="main" class="container">
 
-    <div id="header">
+    <!-- <div id="header">
       <a href="/" class="logo">My shop</a>
-    </div>
+    </div> -->
 
-    <div id="subheader">
+<!--     <div id="subheader">
       <div class="cart">
         Your cart is empty.
       </div>
-    </div>
+    </div> -->
 
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light" style="margin-top: 10px">
+      <a class="navbar-brand" href="/">
+        <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        MH_SHOP
+      </a>
+    </nav>
+    <!-- END Image and Text -->
+
+    <!-- NAVBAR and Search box -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-top: 10px">
+      <a class="navbar-brand" href="/">MH_SHOP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0 ">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+          <div class="sally-cart">
+            <a href="#" class="btn btn-success"><span class="fa fa-shopping-cart"></span></a>
+          </div>
+        </form>
+        
+      </div>
+    </nav>
 
     {% block content %} {% endblock %}
 
   </main>
 
+  <!--Footer-->
+  <div class="container">
+
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+    <hr class="my-4">
+
+    <!-- Social icons -->
+    <div>
+        <a href="#" target="_blank">
+          <i class="fab fa-facebook-f mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-twitter mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-youtube mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-google-plus-g mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-dribbble mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-pinterest mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-github mr-3"></i>
+        </a>
+
+        <a href="#" target="_blank">
+          <i class="fab fa-codepen mr-3"></i>
+        </a>
+      </div>
+      <!-- Social icons -->
+
+      <!--Copyright-->
+      <div class="footer-copyright">
+        <a href="#" target="_blank"> mh_shop.com </a>
+      </div>
+      <!--/.Copyright-->
+    </footer>
+    <!--/.Footer-->
+  </div>
 
 
 
@@ -55,3 +139,10 @@
 </body>
 
 </html>
+
+
+
+
+
+
+

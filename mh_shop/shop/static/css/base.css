@@ -1,10 +1,18 @@
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
+html{
+    height: 100%;
+
+}
 body { 
     margin:0;
     padding:0;
     font-family:helvetica, sans-serif; 
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5 , h6 { 
@@ -169,9 +177,13 @@ ul.errorlist {
     display:block;
 }
 
-#sidebar ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
+#selected{
+    background: #4ecadc;
+    border-radius: 4px;
+    color: #ffff;
+
+/*    background:#5993bb; #4ecadc
+    border-radius:4px;*/
 }
 
 #sidebar ul li.selected a {
@@ -351,8 +363,8 @@ form div.field {
 .product-grid{
     background: #fff;
     padding: 10px;
-    perspective: 1000px;
-    box-shadow: 0px -6px 10px rgba(0, 0, 0, 0.09), 0px 4px 15px rgba(0, 0, 0, 0.15);
+    /*perspective: 1000px;*/
+    /*box-shadow: 0px -6px 10px rgba(0, 0, 0, 0.09), 0px 4px 15px rgba(0, 0, 0, 0.15);*/
 }
 
 .image{
@@ -453,4 +465,18 @@ input{
     background-color: #77b6e2;
     text-align: center;
     margin: 0 auto;
+}
+
+/*Navbar cart*/
+.sally-cart{
+    padding-left: 20px;
+    border-left: 1px solid black;
+}
+
+footer {
+    background: white;
+    color: white;
+    padding: 3em;
+
+    margin-top: auto;
 }
