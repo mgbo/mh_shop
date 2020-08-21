@@ -151,7 +151,7 @@ ul.errorlist {
     padding-top:4px;
 }
 
-#content {
+/* #content {
     padding:0 100px;
     overflow:hidden;
 }
@@ -175,7 +175,7 @@ ul.errorlist {
 
 #sidebar ul li a {
     display:block;
-}
+} */
 
 #selected{
     background: #4ecadc;

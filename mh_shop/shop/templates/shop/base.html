@@ -27,16 +27,6 @@
   <!-- Post body and Our side bar -->
   <main role="main" class="container">
 
-    <!-- <div id="header">
-      <a href="/" class="logo">My shop</a>
-    </div> -->
-
-<!--     <div id="subheader">
-      <div class="cart">
-        Your cart is empty.
-      </div>
-    </div> -->
-
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light" style="margin-top: 10px">
       <a class="navbar-brand" href="/">
@@ -46,28 +36,30 @@
     </nav>
     <!-- END Image and Text -->
 
-    <!-- NAVBAR and Search box -->
+    <!-- NAVBAR and Search box and Cart -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; margin-top: 10px">
-      <a class="navbar-brand" href="/">MH_SHOP</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="container">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
+        <a class="navbar-brand" href="/"><img src={% static "img/logo.png" %}></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <form class="form-inline my-2 my-lg-0 ">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
 
-          <div class="sally-cart">
-            <a href="#" class="btn btn-success"><span class="fa fa-shopping-cart"></span></a>
+          <div class="navbar-nav ml-auto">
+            <form class="form-inline my-2 my-lg-0 ">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          
+              <div class="sally-cart">
+                <a href="#" class="btn btn-success"><span class="fa fa-shopping-cart"></span></a>
+              </div>
+
+            </form>
           </div>
-        </form>
+
+        </div>
         
       </div>
     </nav>
