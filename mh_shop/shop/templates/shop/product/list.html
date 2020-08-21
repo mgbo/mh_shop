@@ -38,7 +38,7 @@
         <div class="col-md-4 product-grid">
           <div class="image-container">
             {% load thumbnail %}
-            {% thumbnail product.image "300" as im %}
+            {% thumbnail product.image "300x300" crop="100%" as im %}
             <a href="{{ product.get_absolute_url }}">
               <img src="{% if product.image %}{{im.url}} {% else %} {% static "img/no_image.png" %} {% endif%}" class="image d-block mx-auto">
             </a>
