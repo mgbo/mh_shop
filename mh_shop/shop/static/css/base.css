@@ -50,6 +50,7 @@ a.button.light {
     text-align:right;
 }
 
+/* ============ Table CSS (cart table ) ============= */
 table {
     width:100%;
     border-spacing:0;
@@ -81,9 +82,9 @@ table.cart {
     margin-bottom:40px;
 }
 
-table.cart img {
+/* table.cart img {
     width:180px;
-}
+} */
 
 tbody td.num {
     text-align:right;
@@ -125,7 +126,7 @@ ul.errorlist {
 }
 
 
-#header {
+/* #header {
     padding:10px 100px;
     font-size:18px;
     overflow:auto;
@@ -151,7 +152,7 @@ ul.errorlist {
     padding-top:4px;
 }
 
-/* #content {
+#content {
     padding:0 100px;
     overflow:hidden;
 }

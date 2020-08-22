@@ -33,6 +33,21 @@
       <a class="navbar-brand" href="/">
         MH_SHOP
       </a>
+      
+      <div>
+        {% with total_items=cart|length %}
+          {% if cart|length > 0 %}
+            Your cart:
+            <a href="{% url "cart:cart_detail" %}">
+              {{ total_items }} item{{ total_items|pluralize }},
+              {{ cart.get_total_price }} MMK
+            </a>
+          {% else %}
+            Your cart is empty.
+          {% endif %}
+        {% endwith %}
+
+      </div>
     </nav>
     <!-- END Image and Text -->
 
@@ -46,16 +61,14 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
-
           <div class="navbar-nav ml-auto">
             <form class="form-inline my-2 my-lg-0 ">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           
-              <div class="sally-cart">
+              {% comment %} <div class="sally-cart">
                 <a href="#" class="btn btn-success"><span class="fa fa-shopping-cart"></span></a>
-              </div>
-
+              </div> {% endcomment %}
             </form>
           </div>
 
