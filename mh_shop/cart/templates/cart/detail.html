@@ -49,15 +49,21 @@
         <tr class="subtotal">
           <td>Subtotal</td>
           <td colspan="4"></td>
-          <td class="num">${{ cart.get_total_price|floatformat:"2" }}</td>
+          <td class="num">{{ cart.get_total_price|floatformat:"2" }} MMK</td>
         </tr>
+
         <tr>
+          <td>
+            "{{ cart.coupon.code}}" coupon
+            ({{ cart.coupon.discount}}% off)
+          </td>
           <td colspan="4"></td>
           <td class="num neg">
-            - ${{ cart.get_discount|floatformat:"2" }}
+            {{ cart.get_discount|floatformat:"2" }} MMK
           </td>
         </tr>
       {% endif %}
+
       <tr class="total">
         <td>Total</td>
         <td colspan="4"></td>
@@ -70,9 +76,10 @@
   </table>
 
   <p>Apply a coupon</p>
-  <form action="{% url "coupons:apply" %}" method="post">
-    {{ coupon_apply_form }}
-    <input type="submit" value="Apply">
+  <form action="{% url "coupons:apply" %}" method="post" class='coupon-form'>
+    {{ coupon_apply_form.as_p}}
+    <button type="submit" class="btn btn-default detail-cart">Apply</button>
+    {% comment %} <input type="submit" value="Apply"> {% endcomment %}
     {% csrf_token %}
   </form>
 
@@ -83,4 +90,5 @@
       Checkout
     </a>
   </p>
+  
 {% endblock %}

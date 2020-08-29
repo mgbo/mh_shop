@@ -3,5 +3,5 @@
 from django import forms
 
 class CouponApplyForm(forms.Form):
-    code = forms.CharField()
+    code = forms.CharField(max_length=200)
 
