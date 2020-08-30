@@ -13,7 +13,9 @@ from .models import Order
 from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
-import weasyprint
+# import weasyprint
+from reportlab.pdfgen import canvas
+
 
 def order_create(request):
     cart = Cart(request)
@@ -51,18 +53,46 @@ def admin_order_detail(request, order_id):
 
 
 
-# @staff_member_required
-# def admin_order_pdf(request, order_id):
-#     order = get_object_or_404(Order, id=order_id)
-#     html = render_to_string('orders/order/pdf.html',
-#                             {'order': order})
+@staff_member_required
+def admin_order_pdf(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    html = render_to_string('orders/order/pdf.html',
+                            {'order': order})
 
-#     response = HttpResponse(content_type='application/pdf')
-#     response['Content-Disposition'] = 'filename=order_{}.pdf"'.format(order.id)
-#     weasyprint.HTML(string=html).write_pdf(response,
-#         stylesheets=[weasyprint.CSS(
-#             settings.STATIC_ROOT + 'css/pdf.css')])
-#     return response
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'filename=order_{}.pdf"'.format(order.id)
+
+    # weasyprint.HTML(string=html).write_pdf(response,
+    #     stylesheets=[weasyprint.CSS(
+    #         settings.STATIC_ROOT + 'css/pdf.css')])
+
+    # Create the PDF object, using the response object as its "files"
+
+    p = canvas.Canvas(response)
+    p.drawString(100, 100, 'Hello World')
+    p.showPage()
+    p.save()
+
+    return response
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
