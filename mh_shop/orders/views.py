@@ -12,9 +12,9 @@ from .models import Order
 
 from django.conf import settings
 from django.http import HttpResponse
-from django.template.loader import render_to_string
-# import weasyprint
-from reportlab.pdfgen import canvas
+
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 
 def order_create(request):
@@ -56,33 +56,29 @@ def admin_order_detail(request, order_id):
 @staff_member_required
 def admin_order_pdf(request, order_id):
     order = get_object_or_404(Order, id=order_id)
-    html = render_to_string('orders/order/pdf.html',
-                            {'order': order})
+    template_path = 'orders/order/pdf.html'
+    context = {'order':order}
 
+    # Create a Django response object, and specify content_type as pdf
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'filename=order_{}.pdf"'.format(order.id)
 
-    # weasyprint.HTML(string=html).write_pdf(response,
-    #     stylesheets=[weasyprint.CSS(
-    #         settings.STATIC_ROOT + 'css/pdf.css')])
+    # if you want to download:
+    # response['Content-Disposition'] = 'attachment; filename="report.pdf"'
 
-    # Create the PDF object, using the response object as its "files"
+    # if you want to display:
+    response['Content-Disposition'] = 'filename="order_{}.pdf"'.format(order.id)
 
-    p = canvas.Canvas(response)
-    p.drawString(100, 100, 'Hello World')
-    p.showPage()
-    p.save()
+    # find the template and render it.
+    template = get_template(template_path)
+    html = template.render(context)
 
+    # create a pdf
+    pisa_status = pisa.CreatePDF(
+       html, dest=response)
+    # if error then show some funy view
+    if pisa_status.err:
+       return HttpResponse('We had some errors <pre>' + html + '</pre>')
     return response
-
-
-
-
-
-
-
-
-
 
 
 
